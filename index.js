@@ -25,6 +25,11 @@ const db=await mongoose.connect(url, {
   useCreateIndex: true
 });
 
+app.get("/",(req,res)=>{
+  console.log("Welcome")
+  res.json("Welcome")
+})
+
 app.post("/register",(req,res)=>{handleRegister(req,res,db)})
 
 app.post("/verify_email/:id/:token",(req,res)=>{handleVerifyRegister(req,res,db)})
