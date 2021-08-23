@@ -73,7 +73,7 @@ export const handleRegister=async(req,res,db)=>{
                 email:urlUser.userEmail,
                 id:urlUser._id
             }
-            const token=jwt.sign(payload,key,{expiresIn:"10m"})
+            const token=jwt.sign(payload,key,{expiresIn:"20m"})
             const verificationLink=`${process.env.CLIENT_BASE_URL}/verify_email/${urlUser._id}/${token}`
             // console.log(urlUser)
             console.log(verificationLink)
