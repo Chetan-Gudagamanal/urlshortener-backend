@@ -17,7 +17,7 @@ app.use(cors())
 app.use(express.json())
 const port=process.env.PORT || 3001
 
-const url=process.env.MONGODB_URI  ||  "mongodb://localhost/url_shortner_DB"
+const url=process.env.MONGO_URI  ||  "mongodb://localhost/url_shortner_DB"
 // const db=await mongoose.connect(url, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
