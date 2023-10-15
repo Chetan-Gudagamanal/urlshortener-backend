@@ -18,12 +18,14 @@ app.use(express.json())
 const port=process.env.PORT || 3001
 
 const url=process.env.MONGODB_URI  ||  "mongodb://localhost/url_shortner_DB"
-const db=await mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
+// const db=await mongoose.connect(url, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useFindAndModify: false,
+//   useCreateIndex: true
+// });
+const db=mongoose.connect(url);
+db.then(() => console.log('Database Connected!'));
 
 app.get("/",(req,res)=>{
   console.log("Welcome")
