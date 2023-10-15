@@ -37,6 +37,7 @@ export const handleSendRegistrationEmail=async (userEmail,link) => {
 
   
   const transporter = nodemailer.createTransport({
+      port: 465,
       service: 'gmail',
       host: "smtp.gmail.com",
       auth: {
