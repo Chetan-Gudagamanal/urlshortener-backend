@@ -33,7 +33,7 @@
 
 
 import nodemailer from 'nodemailer';
-export const handleSendRegistrationEmail=async (email,link) => {
+export const handleSendRegistrationEmail=async (userEmail,link) => {
 
   
   const transporter = nodemailer.createTransport({
