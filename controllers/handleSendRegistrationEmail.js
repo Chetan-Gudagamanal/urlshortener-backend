@@ -21,11 +21,19 @@ const mailOptions = {
         <p>`
 };
 
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-	console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+// 	console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
+async function main() {
+  // send mail with defined transport object
+  const info = await transporter.sendMail(mailOptions);
+
+  console.log("Message sent: %s", info.messageId);
+}
+
+main().catch(console.error)
 }
