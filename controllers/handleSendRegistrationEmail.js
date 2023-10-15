@@ -37,9 +37,9 @@ export const handleSendRegistrationEmail=async (userEmail,link) => {
 
   
   const transporter = nodemailer.createTransport({
-      port: 465,
+      port: 2525,
       service: 'gmail',
-      host: "smtp.gmail.com",
+      host: "sandbox.smtp.mailtrap.io",
       auth: {
           user: process.env.WEB_MAILER,
           pass: process.env.WEB_MAILER_PASSWORD,
