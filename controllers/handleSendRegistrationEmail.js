@@ -40,8 +40,8 @@ export const handleSendRegistrationEmail=async (userEmail,link) => {
       service: 'gmail',
       host: "smtp.gmail.com",
       auth: {
-          user: process.env.CONFIG_EMAIL,
-          pass: process.env.CONFIG_PASSWORD,
+          user: process.env.WEB_MAILER,
+          pass: process.env.WEB_MAILER_PASSWORD,
       },
       secure: true,
   });
