@@ -24,7 +24,7 @@ const url=process.env.MONGO_URI  ||  "mongodb://localhost/url_shortner_DB"
 //   useFindAndModify: false,
 //   useCreateIndex: true
 // });
-const db=mongoose.connect(url);
+const db=mongoose.connect(url,{ useNewUrlParser: true });
 db.then(() => console.log('Database Connected!'));
 
 app.get("/",(req,res)=>{
