@@ -3,11 +3,12 @@ export const handleSendEmail=(userEmail,link)=>{
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
+  host: "smtp.gmail.com",
   auth: {
     user: process.env.CONFIG_EMAIL,
     pass: process.env.CONFIG_PASSWORD
-    
-  }
+  },
+  secure: true,
 });
 
 const mailOptions = {
